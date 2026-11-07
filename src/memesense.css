@@ -1,0 +1,93 @@
+/* Screenshot-inspired geometry; native LiquidBounce widgets remain intact. */
+:root {
+  --accent-color: #f32152 !important;
+  --accent-rgb: 243, 33, 82 !important;
+  --surface-color: #101112 !important;
+  --text-color: #f3f3f3;
+  --text-dimmed-color: #808082;
+  --clickgui-slider-fill-color: #74777e;
+}
+/* The reference HUD sets its own inline accent, overriding inherited root values. */
+[style*="--accent-rgb"] { --accent-rgb: 243, 33, 82 !important; }
+.clickgui-menu.svelte-hpcc0l {
+  position: fixed !important; left: 50% !important; top: 50% !important;
+  transform: translate(-50%, -50%); margin: 0; width: 700px; height: 620px;
+  max-width: 96vw; max-height: 94vh; min-height: 0; background: #101112;
+  border: 0; border-radius: 0; box-shadow: 0 12px 55px #0006;
+  font-family: Inter, sans-serif;
+}
+.clickgui-menu::before {
+  content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px;
+  background: linear-gradient(90deg, #e421f3, #6454ff, #00dbe7, #1fe96a, #ffb600); z-index: 5;
+}
+.clickgui-menu * { text-shadow: none !important; }
+.clickgui-menu .top-panel { height: 56px; flex: 0 0 56px; padding: 0; border-bottom: 2px solid #1c1d1f; cursor: default !important; }
+.clickgui-menu .window-controls, .clickgui-menu .title-block, .clickgui-menu .search-block { display: none !important; }
+.ms-brand { width: 140px; flex: 0 0 140px; padding-left: 18px; color: #f5f5f5; font-size: 18px; font-weight: 700; letter-spacing: -.6px; }
+.ms-brand span { color: #ff2348; }
+.ms-toolbar { display: flex; align-items: center; gap: 10px; padding: 0 28px; width: calc(100% - 140px); color: white; font-size: 11px; font-weight: 600; }
+.ms-enable { display: flex; align-items: center; gap: 8px; cursor: pointer; white-space: nowrap; }
+.ms-enable input { appearance: none; width: 16px; height: 16px; background: #202125; border-radius: 2px; position: relative; cursor: pointer; }
+.ms-enable input:checked { background: #f32152; }
+.ms-enable input:checked::after { content: ''; position: absolute; left: 5px; top: 2px; width: 4px; height: 8px; border: solid white; border-width: 0 2px 2px 0; transform: rotate(45deg); }
+.ms-modules, .ms-bind { border: 0; background: #242528; border-radius: 2px; height: 28px; color: #f5f5f5; font: inherit; padding: 0 8px; }
+.ms-dropdown { position: relative; min-width: 0; width: 158px; flex-shrink: 1; }
+.ms-modules { width: 100%; min-width: 0; cursor: pointer; text-align: left; padding-right: 24px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; position: relative; }
+.ms-modules::after { content: ''; position: absolute; right: 10px; top: 9px; width: 6px; height: 6px; border: solid #eee; border-width: 0 1.5px 1.5px 0; transform: rotate(45deg); }
+.ms-module-popup { position: absolute; top: 34px; left: 0; width: 230px; max-width: 45vw; z-index: 100; padding: 5px; background: #202125; border: 1px solid #393b40; box-shadow: 0 8px 25px #0009; }
+.ms-module-popup[hidden], .ms-module-option[hidden] { display: none; }
+.ms-module-search { display: block; width: 100%; height: 28px; border: 0; background: #141517; color: #eee; padding: 0 8px; font: inherit; margin-bottom: 4px; }
+.ms-module-options { max-height: min(360px, 55vh); overflow-y: auto; overscroll-behavior: contain; }
+.ms-module-option { display: block; width: 100%; border: 0; padding: 8px; color: #eee; background: transparent; font: inherit; text-align: left; cursor: pointer; }
+.ms-module-option:hover, .ms-module-option:focus-visible { background: #333036; color: #ff416a; }
+.ms-bind { cursor: pointer; white-space: nowrap; }
+.ms-status { margin-left: auto; color: #858587; font-size: 10px; line-height: 1.5; max-width: 90px; }
+.clickgui-menu .main-content { flex-direction: row; min-height: 0; }
+.clickgui-menu .category-list-panel { width: 140px; flex: 0 0 140px; padding: 4px 0; background: #111315; border: 0; }
+.clickgui-menu .category-list { gap: 4px; }
+.clickgui-menu .category-item { min-height: 27px; padding: 5px 14px; border-radius: 0; background: transparent; box-shadow: none; gap: 0; transform: none; border-left: 2px solid transparent; }
+.clickgui-menu .category-item:hover { background: #17191b; box-shadow: none; }
+.clickgui-menu .category-item.selected { background: #191b1d; border-left-color: #f32152; box-shadow: none; transform: none; }
+.clickgui-menu .category-item .name { font-size: 11px; font-weight: 600; }
+.clickgui-menu .category-icon { width: 15px; height: 15px; margin-right: 10px; }
+.clickgui-menu .category-item.selected .category-icon { color: #f32152; }
+.clickgui-menu .module-grid-panel { display: none; }
+.clickgui-menu .settings-panel { flex: 1; width: auto; min-width: 0; border: 0; padding: 16px 28px 28px; }
+.clickgui-menu .module.svelte-13zzxnm > .name { position: static; font-size: 11px; font-weight: 600; color: #858587; margin: 0 0 12px; }
+.clickgui-menu .module.svelte-13zzxnm > .settings { background: none; box-shadow: none; border: 0; border-radius: 0; padding: 0; columns: 2; column-gap: 28px; }
+.clickgui-menu .settings > .setting { break-inside: avoid; margin: 0 0 7px; }
+.clickgui-menu .setting { font-size: 11px; }
+.clickgui-menu .setting .name, .clickgui-menu .setting .title, .clickgui-menu .setting .suffix { font-size: 11px; font-weight: 600; }
+.clickgui-menu .checkbox-wrapper { width: 16px; height: 16px; flex-shrink: 0; }
+.clickgui-menu .checkbox { width: 16px; height: 16px; background: #202125; border: 0; border-radius: 2px; }
+.clickgui-menu input:checked + .checkbox { background: #f32152; }
+.clickgui-menu .checkbox::after { top: 1px; width: 4px; height: 9px; border-color: #fff; border-width: 0 2px 2px 0; }
+.clickgui-menu .checkbox-container .name { margin-left: 8px; }
+.clickgui-menu .head.svelte-1vgo2sm { border: 0; border-radius: 2px; padding: 7px; background: #242528; }
+.clickgui-menu .options.svelte-1vgo2sm { border-radius: 2px; background: #242528; border-color: #35363a; }
+.clickgui-menu .nested-settings { border: 0; border-radius: 0; background: transparent; padding: 4px 0 0 10px; }
+.clickgui-menu .value.svelte-tlkx70 { background: none; border: 0; border-radius: 0; padding: 0; font-family: Inter, sans-serif; font-size: 11px; }
+.clickgui-menu .noUi-target { height: 4px; background: #202125; border-radius: 1px; margin: 3px 0 5px; }
+.clickgui-menu .noUi-connect { background: #74777e; }
+.clickgui-menu .noUi-handle { width: 3px !important; height: 4px !important; right: -2px; top: 0; transform: none; border-radius: 0; background: #8b8e95; }
+.clickgui-menu .setting.svelte-hs41sw, .clickgui-menu .setting.svelte-1gma1g5, .clickgui-menu .setting.svelte-1ph1kgt, .clickgui-menu .setting.svelte-5w9mo { min-height: 34px; padding-top: 5px; }
+.clickgui-menu .settings-desc { font-size: 11px !important; line-height: 1.6 !important; }
+.clickgui-menu .footer-panel { display: none; }
+.available-tabs.svelte-1tjbvl5 { top: auto; bottom: 8px; padding: 3px; gap: 3px; border-radius: 2px; background: #111315; box-shadow: none; }
+.available-tabs.svelte-1tjbvl5 .tab-button { font-size: 10px; padding: 4px 10px; border-radius: 2px; }
+.clickgui-menu.ms-binding .module-grid-panel { display: block; position: absolute; z-index: 20; top: 52px; left: 168px; width: 290px; overflow: visible; background: #17191b; }
+.clickgui-menu.ms-binding .module-card { display: none; }
+.clickgui-menu.ms-binding .module-card.ms-current { display: block; min-width: 0; border: 0; box-shadow: none; background: #17191b; border-radius: 2px; padding: 8px; }
+.clickgui-menu.ms-binding .module-description { display: none; }
+.clickgui-menu.ms-binding .bind-panel { position: static; max-width: none; width: 100%; border: 0; box-shadow: none; background: #17191b; }
+button:focus-visible, select:focus-visible, input:focus-visible { outline: 1px solid #f32152 !important; outline-offset: 3px; }
+@media (max-width: 620px) {
+  .clickgui-menu.svelte-hpcc0l { width: 96vw; height: 90vh; }
+  .ms-brand { width: 120px; flex-basis: 120px; font-size: 16px; }
+  .ms-toolbar { padding: 0 12px; width: calc(100% - 120px); gap: 8px; }
+  .ms-dropdown { flex: 1; width: 100px; }
+  .ms-status { display: none; }
+  .clickgui-menu .category-list-panel { width: 120px; flex-basis: 120px; }
+  .clickgui-menu .settings-panel { padding: 16px; }
+  .clickgui-menu .module.svelte-13zzxnm > .settings { columns: 1; }
+}
