@@ -37,7 +37,7 @@ Extract **the contents** of `MemeSense.zip` into:
 Restart LiquidBounce, then enter this command in game chat:
 
 ```text
-.client theme set memesense
+.client theme set memebounce
 ```
 
 Use `.client theme list` to check discovery. The client also provides `.client theme reload`. Switch back with `.client theme set liquidbounce`.
