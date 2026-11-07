@@ -50,7 +50,7 @@ Edit `src/memesense.css` and `src/memesense.js`, then run `python build.py` with
 
 To refresh the reference runtime explicitly, use `python build.py --reference "PATH/TO/BEAUTIFY/dist"`.
 
-MemeBounce is the repository/marketplace name. The theme currently keeps `memesense` as its internal ID and MemeSense as its in-game display name, so existing installations and the commands above continue to work.
+Version 1.0.2 uses MemeBounce as its in-game display name and credits Abgelutscht as the theme author. Edit `public/metadata.json` to change the theme identity and version. The build merges it with the bundled runtime metadata, preserving its screen, component, and asset declarations. The internal ID remains `memesense` so existing installations and commands continue to work.
 
 Run `python preview.py` and open `http://127.0.0.1:8765/#/clickgui?static` for a local preview with simulated settings. This server never connects to Minecraft. It is only a preview, not the server to use for playing.
 

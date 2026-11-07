@@ -19,14 +19,15 @@ if not (OUT / 'metadata.json').exists() and (ROOT / 'MemeSense.zip').exists():
 if not (OUT / 'metadata.json').exists():
     raise SystemExit('Missing bundled runtime. Restore MemeSense/dist or supply --reference PATH.')
 metadata = json.loads((OUT / 'metadata.json').read_text())
-metadata.update(id='memesense', name='MemeSense', version='1.0.1', authors=['MemeSense theme', 'asitnix (reference runtime)'])
+metadata.update(json.loads((ROOT / 'public' / 'metadata.json').read_text(encoding='utf-8')))
 metadata['colors'] = {'Accent': '#F32152', 'Tint': '#101112'}
 (OUT / 'metadata.json').write_text(json.dumps(metadata, indent=2) + '\n')
 html = (OUT / 'index.html').read_text(encoding='utf-8')
 html = re.sub(r'\s*<link rel="stylesheet" href="\./assets/memesense\.css[^\"]*">', '', html)
 html = re.sub(r'\s*<script defer src="\./assets/memesense\.js[^\"]*"></script>', '', html)
-html = html.replace('<title>LiquidBounce UI</title>', '<title>MemeSense · LiquidBounce</title>')
-html = html.replace('</head>', '  <link rel="stylesheet" href="./assets/memesense.css?v=1.0.1">\n  <script defer src="./assets/memesense.js?v=1.0.1"></script>\n</head>')
+html = re.sub(r'<title>.*?</title>', '<title>MemeBounce · LiquidBounce</title>', html)
+version = metadata['version']
+html = html.replace('</head>', f'  <link rel="stylesheet" href="./assets/memesense.css?v={version}">\n  <script defer src="./assets/memesense.js?v={version}"></script>\n</head>')
 (OUT / 'index.html').write_text(html, encoding='utf-8')
 for name in ['memesense.css', 'memesense.js']:
     shutil.copyfile(ROOT / 'src' / name, OUT / 'assets' / name)
