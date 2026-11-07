@@ -8,15 +8,15 @@ Captured in Minecraft singleplayer. Click an image to view it at full resolution
 
 ### ClickGUI
 
-![MemeBounce ClickGUI with red checkboxes, thin sliders, and two columns of module settings](screenshots/clickgui.png)
+![MemeBounce ClickGUI with red checkboxes, thin sliders, and two columns of module settings](screenshots/clickgui.png?v=protected)
 
 ### Searchable module picker
 
-![MemeBounce in-page module dropdown running inside Minecraft](screenshots/module-picker.png)
+![MemeBounce in-page module dropdown running inside Minecraft](screenshots/module-picker.png?v=protected)
 
 ### HUD
 
-![MemeBounce HUD with red module names and matching widget accents during gameplay](screenshots/hud.png)
+![MemeBounce HUD with red module names and matching widget accents during gameplay](screenshots/hud.png?v=protected)
 
 The minimap shown in the gameplay screenshot is a separate mod.
 
