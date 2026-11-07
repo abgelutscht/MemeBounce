@@ -1,6 +1,6 @@
 # MemeBounce for LiquidBounce
 
-A screenshot-inspired ClickGUI theme with a 700 × 620 dark window, narrow category sidebar, pink square checkboxes, thin gray sliders, two columns of settings, and a rainbow top edge.
+A Memesense inspired theme for LiquidBounce.
 
 ## In-game screenshots
 
