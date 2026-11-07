@@ -2,6 +2,24 @@
 
 A screenshot-inspired ClickGUI theme with a 700 × 620 dark window, narrow category sidebar, pink square checkboxes, thin gray sliders, two columns of settings, and a rainbow top edge.
 
+## In-game screenshots
+
+Captured in Minecraft singleplayer. Click an image to view it at full resolution.
+
+### ClickGUI
+
+![MemeBounce ClickGUI with red checkboxes, thin sliders, and two columns of module settings](screenshots/clickgui.png)
+
+### Searchable module picker
+
+![MemeBounce in-page module dropdown running inside Minecraft](screenshots/module-picker.png)
+
+### HUD
+
+![MemeBounce HUD with red module names and matching widget accents during gameplay](screenshots/hud.png)
+
+The minimap shown in the gameplay screenshot is a separate mod.
+
 The module dropdown shows real modules in the selected LiquidBounce category. Enable controls the selected module; Bind opens its native keybind editor. Settings save immediately through the reference runtime. HUD Editor and global Settings remain available along the bottom of the screen. Other screens and HUD components use the bundled reference UI with the pink accent.
 
 Version 1.0.1 uses an in-page, searchable module picker for compatibility with Minecraft's embedded browser and overrides the reference HUD's local blue accent with MemeSense red.
@@ -38,6 +56,6 @@ Run `python preview.py` and open `http://127.0.0.1:8765/#/clickgui?static` for a
 
 ## Validation and credits
 
-Validated JavaScript syntax, theme metadata, packaged assets, rendered layout, category/module selection, and a server-confirmed setting save in a desktop browser. In-game activation and every individual setting type have not been tested.
+Validated JavaScript syntax, theme metadata, packaged assets, rendered layout, category/module selection, and a server-confirmed setting save in a desktop browser. Captured the active theme, working module picker, settings, and red HUD accents in Minecraft singleplayer. Every individual setting type has not been tested.
 
 Runtime, HUD components, fonts, and other assets come from the supplied BeautifyV2 installation by asitnix (marketplace item 581/version 4958), based on CCBlueX's LiquidBounce UI. Original license notices remain in the copied bundle. Upstream source: [BeautifyV2](https://github.com/CCBlueX/LiquidBounce-Theme-BeautifyV2) and [LiquidBounce](https://github.com/CCBlueX/LiquidBounce). The added layout adapter and styles are in `src`. This is an independent recreation inspired by MemeSense, with no affiliation to MemeSense.
