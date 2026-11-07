@@ -1,0 +1,48 @@
+
+name: Publish MemeBounce
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      - name: Validate JavaScript
+        run: node --check src/memesense.js
+
+      - name: Build MemeBounce
+        run: python build.py
+
+      - name: Validate ZIP
+        run: |
+          python -c "import zipfile; z=zipfile.ZipFile('MemeSense.zip'); assert z.testzip() is None"
+
+      - name: Upload to LiquidBounce Marketplace
+        env:
+          API_TOKEN: ${{ secrets.API_TOKEN }}
+        run: |
+          curl --fail-with-body -X POST \
+            "https://api.liquidbounce.net/api/v3/marketplace/883/revisions" \
+            -H "Authorization: Bearer $API_TOKEN" \
+            -F "file=@MemeSense.zip" \
+            -F "version=1.0.2" \
+            -F "changelog=Initial MemeBounce marketplace release" \
+            -F "channel=alpha"
